@@ -1,31 +1,12 @@
 import { useState } from 'react'
 
 import Section from '../Section'
-import { GalleryItem } from '../../Pages/Home'
-
-import spiderman from '../../assets/images/banner-homem-aranha.png'
-import hogwarts from '../../assets/images/fundo_hogwarts.png'
 
 import play from '../../assets/images/play.png'
 import zoom from '../../assets/images/zoom.png'
 import closeIcon from '../../assets/images/fechar.png'
 
 import * as S from './styles'
-
-const mock: GalleryItem[] = [
-  {
-    type: 'image',
-    url: spiderman
-  },
-  {
-    type: 'image',
-    url: hogwarts
-  },
-  {
-    type: 'video',
-    url: 'https://www.youtube.com/embed/uHGShqcAHlQ'
-  }
-]
 
 type Props = {
   defaultCover: string
@@ -37,7 +18,7 @@ interface ModalState extends GalleryItem {
   isVisible: boolean
 }
 
-const Gallery = ({ defaultCover, name }: Props) => {
+const Gallery = ({ defaultCover, name, items }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false,
     type: 'image',
@@ -66,7 +47,7 @@ const Gallery = ({ defaultCover, name }: Props) => {
     <>
       <Section title="Galeria" background="black">
         <S.Items>
-          {mock.map((media, index) => (
+          {items.map((media, index) => (
             <S.Item
               key={media.url}
               onClick={() => {
@@ -84,7 +65,7 @@ const Gallery = ({ defaultCover, name }: Props) => {
               <S.Action>
                 <img
                   src={getMediaIcon(media)}
-                  alt="Clique para maximizar a mídia"
+                  alt="Clique para maximar a mídia"
                 />
               </S.Action>
             </S.Item>

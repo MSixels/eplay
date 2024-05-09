@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { TagContainer } from '../Tag/Styles'
+import { TagContainer } from '../Tag/styles'
 
 export const Image = styled.div`
   width: 100%;

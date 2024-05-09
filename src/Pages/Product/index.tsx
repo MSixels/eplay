@@ -2,8 +2,8 @@ import { useParams } from 'react-router-dom'
 
 import Hero from '../../components/Hero'
 import Section from '../../components/Section'
-import Loader from '../../components/Loader'
 import Gallery from '../../components/Gallery'
+import Loader from '../../components/Loader'
 
 import { useGetGameQuery } from '../../services/api'
 
@@ -25,7 +25,7 @@ const Product = () => {
       <Section title="Sobre o jogo" background="black">
         <p>{game.description}</p>
       </Section>
-      <Section title="Mais detalhes" background="grey">
+      <Section title="Mais detalhes" background="gray">
         <p>
           <b>Plataforma:</b> {game.details.system}
           <br />
